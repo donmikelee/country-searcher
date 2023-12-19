@@ -1,11 +1,10 @@
 interface HeaderProps {
     className: string;
-    children: string;
 }
 
-const Header: React.FC<HeaderProps> = ({className, children}) => {
+const Header: React.FC<HeaderProps> = ({className}) => {
     return (  
-        <div className={className}>{children}</div>
+        <div className={className}></div>
     );
 }
  

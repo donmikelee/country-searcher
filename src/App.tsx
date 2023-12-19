@@ -22,10 +22,12 @@ const generateBEMClassName = ({ block, element, modifiers }: BEMProps): string =
 
 const App = () => {
 
+  const appClass = generateBEMClassName( { block: 'csApp' });
   const headerClass = generateBEMClassName( { block: 'csApp', element: 'Header' });
+
   return ( 
-    <div className="csApp">
-      <Header className={headerClass}>Dupa</Header>
+    <div className={appClass}>
+      <Header className={headerClass}/>
     </div>
   );
 }
