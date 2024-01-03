@@ -7,7 +7,7 @@
     padding: variables.$app-padding calc(3 * variables.$app-padding);
     background-color: variables.$white;
     box-shadow: variables.$nav-box-shadow;
-    
+
     .logo {
         font-size: 20px;
         font-weight: 800;
@@ -16,7 +16,7 @@
         .logo-link {
             text-decoration: none;
         }
-
+        
         .logo-link:visited {
             color: inherit;
         }
