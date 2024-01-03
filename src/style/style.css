@@ -38,6 +38,13 @@
 .navigation .logo {
   font-size: 20px;
   font-weight: 800;
+  cursor: pointer;
+}
+.navigation .logo .logo-link {
+  text-decoration: none;
+}
+.navigation .logo .logo-link:visited {
+  color: inherit;
 }
 .navigation .theme-changer {
   display: inline-flex;

@@ -11,6 +11,15 @@
     .logo {
         font-size: 20px;
         font-weight: 800;
+        cursor: pointer;
+
+        .logo-link {
+            text-decoration: none;
+        }
+
+        .logo-link:visited {
+            color: inherit;
+        }
     }
 
     .theme-changer {
