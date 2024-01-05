@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "Nunito Sans 10pt";
+  src: url("./fonts/NunitoSans10pt-ExtraBold.woff2") format("woff2"), url("./fonts/NunitoSans10pt-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito Sans 10pt";
+  src: url("./fonts/NunitoSans10pt-SemiBold.woff2") format("woff2"), url("./fonts/NunitoSans10pt-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito Sans 10pt";
+  src: url("./fonts/NunitoSans10pt-Light.woff2") format("woff2"), url("./fonts/NunitoSans10pt-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans 10pt";
+  font-style: normal;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.navigation .logo {
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.navigation .logo .logo-link {
+  text-decoration: none;
+}
+.navigation .logo .logo-link:visited {
+  color: inherit;
+}
+.navigation .theme-changer {
+  display: inline-flex;
+  column-gap: 10px;
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+.navigation .theme-changer::before {
+  content: url("./icons/moon-regular.svg");
+  transform: rotate(-30deg);
+}
+
+/*# sourceMappingURL=style.css.map */

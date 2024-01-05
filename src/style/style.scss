@@ -1,0 +1,9 @@
+//variables
+@use "./variables/variables";
+
+//fonts
+@use "./fonts/fonts";
+
+//sections style
+@use "./partials/app.scss";
+@use "./partials/nav.scss";
