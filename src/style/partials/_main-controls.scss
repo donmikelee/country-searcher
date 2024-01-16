@@ -1,0 +1,86 @@
+@use "../variables/variables";
+
+.input-container {
+    display: flex;
+
+    .input-search {
+        height: variables.$control-height;
+        background-image: url("./icons/magnifying-glass-solid.svg");
+        background-position: 20px 13px;
+        background-repeat: no-repeat;
+        background-size: 16px;
+        padding-left: 52px;
+        width: calc(377px - 52px);
+        transition: all 0.1s ease 0s;
+        border: none;
+        box-shadow: variables.$control-boxShadow;
+        border-radius: variables.$control-border-radius;
+
+        &:focus {
+            background-position: 0px 18px;
+            background-size: 1px;
+            padding-left: 15px;
+        }
+    }
+}
+
+.countries-filter{
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+
+    .selected-option {
+        height: variables.$control-height;
+        background-color: variables.$white;
+        line-height: variables.$control-height;
+        padding-left: 20px;
+        padding-right: 50px;
+        box-shadow: variables.$control-boxShadow;
+        border-radius: variables.$control-border-radius;
+        background-image: url("./icons/chevron-down-solid.svg");
+        background-position: 130px 15px;
+        background-repeat: no-repeat;
+        background-size: 12px;
+        cursor: pointer;
+        position: relative;
+
+        &--expanded {
+            background-image: url("./icons/chevron-up-solid.svg");
+            background-position: 130px 15px;
+            background-repeat: no-repeat;
+            background-size: 12px;
+        }
+    }
+
+    .region-list--expanded {
+        list-style-type: none;
+        background-color: variables.$white;
+        border-radius: variables.$control-border-radius;
+        box-shadow: variables.$control-boxShadow;
+        position: absolute;
+        top: 45px;
+        width: 100%;
+        z-index: 99999;
+        padding: 10px 0px;
+
+        .region-item {
+            padding: 5px 50px 5px 20px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: variables.$very-light-gray;
+            }
+        }
+    }
+
+    .region-list {
+        display: none;
+    }
+}
+
+@media (max-width: 650px){
+    .main-controls {
+        flex-direction: column;
+        row-gap: 40px;
+    }
+}

@@ -1,20 +1,35 @@
 //Colors
 
-//Dark Mode Elements
-$dark-blue: hsl(209, 23%, 22%);
-//Dark Mode Background
-$very-dark-blue: hsl(207, 26%, 17%);
-//Light Mode Text
-$very-dark-blue-two: hsl(200, 15%, 8%);
-//Light Mode Input
-$dark-gray: hsl(0, 0%, 52%);
-//Light Mode Background
-$very-light-gray: hsl(0, 0%, 98%);
-//Dark Mode Text & Light Mode Elements
-$white: hsl(0, 0%, 100%);
+    //Dark Mode Elements
+    $dark-blue: hsl(209, 23%, 22%);
+    //Dark Mode Background
+    $very-dark-blue: hsl(207, 26%, 17%);
+    //Light Mode Text
+    $very-dark-blue-two: hsl(200, 15%, 8%);
+    //Light Mode Input
+    $dark-gray: hsl(0, 0%, 52%);
+    //Light Mode Background
+    $very-light-gray: hsl(0, 0%, 98%);
+    //Dark Mode Text & Light Mode Elements
+    $white: hsl(0, 0%, 100%);
+
+//Font-weight
+
+    $font-weight-thin: 300;
+    $font-weight-semiBold: 600;
+    $font-weight-bold: 800;
 
 //Nav box-shadow
-$nav-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    $nav-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 
 //Padding
-$app-padding: 20px;
+    $app-padding: 20px;
+
+//Controls
+    $control-border-radius: 4px;
+    $control-height: 42px;
+    $control-boxShadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    $countries-list-gap: 80px;
+    $country-card-minWidth: 248px;
+    $flag-height: 200px;
