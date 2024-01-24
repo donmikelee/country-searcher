@@ -28,25 +28,11 @@
 }
 
 .main-panel {
-  height: calc(100vh - 67px);
   padding: 40px 60px;
   background-color: hsl(0, 0%, 98%);
   display: flex;
   flex-direction: column;
   row-gap: 60px;
-  overflow-y: scroll;
-}
-
-.main-panel::-webkit-scrollbar {
-  width: 8px;
-}
-
-.main-panel::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-}
-
-.main-panelr::-webkit-scrollbar-track {
-  background-color: transparent;
 }
 
 .main-controls {
@@ -97,7 +83,7 @@
   background-repeat: no-repeat;
   background-size: 16px;
   padding-left: 52px;
-  width: 325px;
+  width: 225px;
   transition: all 0.1s ease 0s;
   border: none;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -126,12 +112,12 @@
   background-position: 130px 15px;
   background-repeat: no-repeat;
   background-size: 12px;
+  background-position: calc(100% - 20px) center;
   cursor: pointer;
   position: relative;
 }
 .countries-filter .selected-option--expanded {
   background-image: url("./icons/chevron-up-solid.svg");
-  background-position: 130px 15px;
   background-repeat: no-repeat;
   background-size: 12px;
 }
@@ -164,25 +150,23 @@
   }
 }
 .countries-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
   list-style-type: none;
-  gap: 80px;
-  justify-content: space-between;
-  align-items: center;
 }
 .countries-list .country-card {
   display: flex;
   flex-direction: column;
-  min-width: 248px;
-  width: calc(25% - 80px);
   background-color: hsl(0, 0%, 100%);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   cursor: pointer;
+  border-radius: 4px;
 }
 .countries-list .country-card .flag {
   background-color: black;
   height: 200px;
+  border-radius: 4px 4px 0 0;
 }
 .countries-list .country-card .country-data {
   padding: 20px;
@@ -203,9 +187,11 @@
   margin-bottom: 10px;
 }
 
-@media (max-width: 703px) {
+@media (max-width: 1273px) {
   .countries-list {
+    grid-template-columns: repeat(auto-fill, 300px);
     justify-content: center;
+    gap: 48px;
   }
 }
 

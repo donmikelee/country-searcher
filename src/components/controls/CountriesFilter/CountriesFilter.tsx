@@ -5,13 +5,13 @@ const CountriesFilter = () => {
     const [expanded, setExpand] = useState(false);
 
     const expandList = () => {
-        setExpand(!expanded)
+        setExpand((prevState => !prevState))
     }
 
     return (
         <div className="countries-filter">
-            <div className={expanded ? "selected-option" : "selected-option selected-option--expanded"} onClick={expandList}>Filter by Region</div>
-            <ul className={expanded ? "region-list" : "region-list--expanded"}>
+            <div className={expanded ? "selected-option selected-option--expanded" : "selected-option"} onClick={expandList}>Filter by Region</div>
+            <ul className={expanded ? "region-list--expanded" : "region-list"}>
                 <li className="region-item" value="USA">Africa</li>
                 <li className="region-item" value="Canada">America</li>
                 <li className="region-item" value="Brazil">Asia</li>

@@ -1,7 +1,8 @@
 const InputSearch = () => {
     return (
         <div className="input-container">
-            <input type="search" placeholder="Search for a country..." className="input-search"></input>
+            <label htmlFor="input-search" style={{display: 'none'}}>Search for a country</label>
+            <input type="search" id="input-search" placeholder="Search for a country..." className="input-search" ></input>
         </div>  
     );
 }

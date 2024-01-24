@@ -1,26 +1,25 @@
 @use "../variables/variables";
 
 .countries-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
     list-style-type: none;
-    gap: variables.$countries-list-gap;
-    justify-content: space-between;
-    align-items: center;
 
     .country-card {
         display: flex;
         flex-direction: column;
-        min-width: variables.$country-card-minWidth;
-        width: calc(25% - variables.$countries-list-gap);
         background-color: variables.$white;
         box-shadow: variables.$control-boxShadow;
         cursor: pointer;
+        border-radius: 4px;
+
 
         
         .flag {
             background-color: black;
             height: variables.$flag-height;
+            border-radius: 4px 4px 0 0;
         }
 
         .country-data {
@@ -48,9 +47,10 @@
     }  
 }
 
-@media (max-width: 703px){
+@media (max-width: 1273px){
     .countries-list {
+        grid-template-columns: repeat(auto-fill, 300px);
         justify-content: center;
+        gap: 48px;
     }
 }
-
