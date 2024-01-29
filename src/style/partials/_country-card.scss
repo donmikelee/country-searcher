@@ -1,0 +1,56 @@
+@use "../variables/variables";
+
+.countries-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    list-style-type: none;
+
+    .country-card {
+        display: flex;
+        flex-direction: column;
+        background-color: variables.$white;
+        box-shadow: variables.$control-boxShadow;
+        cursor: pointer;
+        border-radius: 4px;
+
+
+        
+        .flag {
+            background-color: black;
+            height: variables.$flag-height;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .country-data {
+            padding: variables.$basic-padding;
+
+            .name {
+                font-weight: variables.$font-weight-bold;
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .label {
+                font-weight: variables.$font-weight-semiBold;
+                font-size: 14px;
+            }
+
+            .data {
+                font-size: 14px;
+            }
+
+            .capital {
+                margin-bottom: 10px;
+            }
+        }
+    }  
+}
+
+@media (max-width: 1273px){
+    .countries-list {
+        grid-template-columns: repeat(auto-fill, 300px);
+        justify-content: center;
+        gap: 48px;
+    }
+}
