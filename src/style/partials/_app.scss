@@ -9,7 +9,7 @@
 }
 
 .main-panel {
-    padding: calc(2 * variables.$app-padding) calc(3 * variables.$app-padding);
+    padding: variables.$app-padding;
     background-color: variables.$very-light-gray;
     display: flex;
     flex-direction: column;
