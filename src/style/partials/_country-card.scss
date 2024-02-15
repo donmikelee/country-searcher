@@ -13,13 +13,22 @@
         box-shadow: variables.$control-boxShadow;
         cursor: pointer;
         border-radius: 4px;
+        transition: transform .1s ease-in;
 
-
-        
+        &:hover{
+            transform: scale(1.05);
+        }
+       
         .flag {
-            background-color: black;
             height: variables.$flag-height;
             border-radius: 4px 4px 0 0;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+
+            .flag-img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
         }
 
         .country-data {
