@@ -1,0 +1,32 @@
+.countries-details {
+    display: flex;
+    flex-grow: 1;
+    .country-details {
+        display: flex;
+        flex-grow: 1;
+        column-gap: 80px;
+    }
+
+    .flag-img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+
+    .country-data-cols {
+        display: flex;
+        column-gap: 150px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+    }
+
+    .country-data-first-col div,
+    .country-data-second-col div {
+        margin: 5px 0px;
+    }
+}
+
