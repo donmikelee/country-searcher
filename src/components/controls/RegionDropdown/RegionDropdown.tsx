@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { useData } from "../../../data/DataContext";
+import IconSVG from "../IconSVG/IconSVG";
 
 const RegionDropdown = () => {
 
@@ -10,7 +11,7 @@ const RegionDropdown = () => {
 
     useEffect(() => {
         if (countries && countries.length > 0) {
-          const uniqueRegions = ['All countries', ...Array.from(new Set(countries.map(country => country.region))).filter(Boolean)];
+          const uniqueRegions = ['All countries', ...Array.from(new Set(countries.map(country => country.region))).filter(Boolean).sort((a, b) => a.localeCompare(b))];
           setRegions(uniqueRegions);
         }
     }, [countries]);
@@ -27,7 +28,10 @@ const RegionDropdown = () => {
 
     return (
         <div className="countries-filter">
-            <div className={expanded ? "selected-option selected-option--expanded" : "selected-option"} onClick={expandList}>{selectedRegion}</div>
+            <div className={expanded ? "selected-option selected-option--expanded" : "selected-option"} onClick={expandList}>
+                <span>{selectedRegion} </span>
+                <IconSVG name="chevron-down"></IconSVG>
+            </div>
             <ul className={expanded ? "region-list--expanded" : "region-list"}>
                 {regions.map(region => (
                     <li key={region} value={region} className="region-item" onClick={() => handleChangeRegion(region)}>{region}</li>

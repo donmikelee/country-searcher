@@ -8,7 +8,9 @@ const CountryDetails = () => {
   const { countryName } = useParams();
   const navigate = useNavigate();
 
-  const country = countries.find((c) => c.name.common === countryName);
+  const country = countries.find(
+    (country) => country.name.common.toLowerCase() === countryName.toLowerCase()
+  );
 
   console.log(country);
 

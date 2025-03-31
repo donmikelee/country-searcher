@@ -32,24 +32,30 @@
 
     .selected-option {
         height: variables.$control-height;
+        user-select: none;
         background-color: variables.$white;
         line-height: variables.$control-height;
         padding-left: 20px;
-        padding-right: 50px;
+        padding-right: 20px;
         box-shadow: variables.$control-boxShadow;
         border-radius: variables.$control-border-radius;
-        background-image: url("./icons/chevron-down-solid.svg");
-        background-position: 130px 15px;
-        background-repeat: no-repeat;
-        background-size: 12px;
-        background-position: calc(100% - 20px) center;
         cursor: pointer;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .icon-chevron-down {
+            transform: rotate(0deg);
+            transition: transform 0.1s ease-in;
+            width: 12px;
+        }
 
         &--expanded {
-            background-image: url("./icons/chevron-up-solid.svg");
-            background-repeat: no-repeat;
-            background-size: 12px;
+            .icon-chevron-down {
+                transform: rotate(180deg);
+                transition: transform 0.1s ease-in;
+            }
         }
     }
 

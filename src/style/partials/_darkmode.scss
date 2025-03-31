@@ -1,0 +1,59 @@
+@use "../variables/variables";
+
+.darkmode {
+
+    color: variables.$white;
+
+    button {
+        color: variables.$white;
+        background-color: variables.$dark-blue;
+        box-shadow: rgba(14, 19, 22, 0.2) 0px 8px 24px;
+    }
+
+    .main-panel {
+        background-color: variables.$very-dark-blue;
+    }
+
+    .navigation {
+        background-color: variables.$dark-blue;
+    }
+
+    .theme-changer {
+        box-shadow: none;
+    }
+
+    .countries-filter .selected-option {
+        background-color: variables.$dark-blue;
+        box-shadow: none;
+    }
+
+    .countries-filter .region-list--expanded {
+        background-color: variables.$dark-blue;
+        box-shadow: none;
+    }
+
+    .country-card {
+        background-color: variables.$dark-blue;
+        box-shadow: rgba(14, 19, 22, 0.2) 0px 8px 24px;
+    }
+
+    .borders-data li {
+        background-color: variables.$dark-blue;
+    }
+
+    .input-container .input-search {
+        background-color: variables.$dark-blue;
+        background-image: url("./icons/magnifying-glass-dm.svg");
+        box-shadow: rgba(14, 19, 22, 0.2) 0px 8px 24px;
+        color: variables.$white;
+        
+        &::placeholder {
+            color: variables.$white;
+        }
+    }
+
+    .countries-filter .region-list--expanded .region-item:hover {
+        background-color: variables.$very-dark-blue-two;
+    }
+
+}
