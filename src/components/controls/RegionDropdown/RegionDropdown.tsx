@@ -27,7 +27,7 @@ const RegionDropdown = () => {
     };
 
     return (
-        <div className="countries-filter">
+        <div className="countries-dropdown countries-filter">
             <div className={expanded ? "selected-option selected-option--expanded" : "selected-option"} onClick={expandList}>
                 <span>{selectedRegion} </span>
                 <IconSVG name="chevron-down"></IconSVG>

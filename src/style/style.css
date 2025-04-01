@@ -151,19 +151,19 @@ a {
   padding-left: 15px;
 }
 
-.countries-filter {
+.countries-dropdown {
   font-size: 12px;
   min-width: 161px;
   font-weight: 600;
   position: relative;
 }
-.countries-filter .selected-option {
+.countries-dropdown .selected-option {
   height: 42px;
   user-select: none;
   background-color: hsl(0, 0%, 100%);
   line-height: 42px;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 10px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 4px;
   cursor: pointer;
@@ -172,16 +172,16 @@ a {
   align-items: center;
   justify-content: space-between;
 }
-.countries-filter .selected-option .icon-chevron-down {
+.countries-dropdown .selected-option .icon-chevron-down {
   transform: rotate(0deg);
   transition: transform 0.1s ease-in;
   width: 12px;
 }
-.countries-filter .selected-option--expanded .icon-chevron-down {
+.countries-dropdown .selected-option--expanded .icon-chevron-down {
   transform: rotate(180deg);
   transition: transform 0.1s ease-in;
 }
-.countries-filter .region-list--expanded {
+.countries-dropdown .region-list--expanded {
   list-style-type: none;
   background-color: hsl(0, 0%, 100%);
   border-radius: 4px;
@@ -192,15 +192,20 @@ a {
   z-index: 99999;
   padding: 10px 0px;
 }
-.countries-filter .region-list--expanded .region-item {
+.countries-dropdown .region-list--expanded .region-item {
   padding: 5px 50px 5px 20px;
   cursor: pointer;
 }
-.countries-filter .region-list--expanded .region-item:hover {
+.countries-dropdown .region-list--expanded .region-item:hover {
   background-color: hsl(0, 0%, 98%);
 }
-.countries-filter .region-list {
+.countries-dropdown .region-list {
   display: none;
+}
+
+.countries-filter {
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 @media (max-width: 650px) {
@@ -339,11 +344,11 @@ a {
 .darkmode .theme-changer {
   box-shadow: none;
 }
-.darkmode .countries-filter .selected-option {
+.darkmode .countries-dropdown .selected-option {
   background-color: hsl(209, 23%, 22%);
   box-shadow: none;
 }
-.darkmode .countries-filter .region-list--expanded {
+.darkmode .countries-dropdown .region-list--expanded {
   background-color: hsl(209, 23%, 22%);
   box-shadow: none;
 }
@@ -363,7 +368,7 @@ a {
 .darkmode .input-container .input-search::placeholder {
   color: hsl(0, 0%, 100%);
 }
-.darkmode .countries-filter .region-list--expanded .region-item:hover {
+.darkmode .countries-dropdown .region-list--expanded .region-item:hover {
   background-color: hsl(200, 15%, 8%);
 }
 

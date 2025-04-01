@@ -2,7 +2,7 @@ import { useData } from "../../../data/DataContext";
 import { Link } from "react-router-dom";
 
 const CountryCard = () => {
-    const { countries, filtredRegion, typedCountryName } = useData();
+    const { countries, filtredRegion, typedCountryName, sortBy } = useData();
 
     const filteredCountries = countries
         .filter(country => {
@@ -10,7 +10,12 @@ const CountryCard = () => {
             const nameFilter = !typedCountryName || country.name.common.toLowerCase().startsWith(typedCountryName.toLowerCase());
             return regionFilter && nameFilter;
         })
-        .sort((a, b) => a.name.common.localeCompare(b.name.common));
+        .sort((a, b) => {
+            if (sortBy === "desc") return b.population - a.population;
+            if (sortBy === "asc") return a.population - b.population;
+            return 0;
+        });
+
     return (
         <>
             {filteredCountries.length > 0 ? (
@@ -26,7 +31,7 @@ const CountryCard = () => {
                                 </div>
                                 <div className="population">
                                     <span className="population-label label">Population: </span>
-                                    <span className="population-data data">{country.population}</span>
+                                    <span className="population-data data">{country.population.toLocaleString()}</span>
                                 </div>
                                 <div className="region">
                                     <span className="region-label label">Region: </span>

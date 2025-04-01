@@ -22,12 +22,12 @@
         box-shadow: none;
     }
 
-    .countries-filter .selected-option {
+    .countries-dropdown .selected-option {
         background-color: variables.$dark-blue;
         box-shadow: none;
     }
 
-    .countries-filter .region-list--expanded {
+    .countries-dropdown .region-list--expanded {
         background-color: variables.$dark-blue;
         box-shadow: none;
     }
@@ -52,7 +52,7 @@
         }
     }
 
-    .countries-filter .region-list--expanded .region-item:hover {
+    .countries-dropdown .region-list--expanded .region-item:hover {
         background-color: variables.$very-dark-blue-two;
     }
 
