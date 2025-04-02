@@ -4,6 +4,7 @@ import InputSearch from "../../controls/InputSearch/InputSearch";
 import Nav from "../Nav/Nav";
 import AppRoutes from "../../../routes/AppRoutes";
 import SortDropdown from "../../controls/SortDropdown/SortDropdown";
+import RecentlyViewed from "../RecentlyViewed/RecentlyViewed";
 
 
 const HomePage = () => {
@@ -17,6 +18,7 @@ const HomePage = () => {
         {isHomePage && (
           <section className="main-controls">
             <InputSearch />
+            <RecentlyViewed />
             <RegionDropdown />
             <SortDropdown />
           </section>

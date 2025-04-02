@@ -13,14 +13,21 @@ interface Country {
     capital: string[];
 }
 
+interface RecentCountry {
+    name: string;
+    flag: string;
+}
+
 interface DataContextProps {
     countries: Country[];
     filtredRegion: string | null;
     typedCountryName: string | null;
     sortBy: string | null;
+    recentlyViewed: RecentCountry[];
     setFiltredRegion: (region: string | null) => void;
     setTypedCountryName: (name: string | null) => void;
     setSortBy: (sortBy: string | null) => void;
+    addToRecentlyViewed: (country: RecentCountry) => void;
 }
 
 const DataContext = createContext<DataContextProps | undefined>(undefined);
@@ -30,6 +37,9 @@ const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     const [filtredRegion, setFiltredRegion] = useState<string | null>(null);
     const [typedCountryName, setTypedCountryName] = useState<string | null>(null);
     const [sortBy, setSortBy] = useState<string | null>(null);
+    const [recentlyViewed, setRecentlyViewed] = useState<RecentCountry[]>(() => {
+        return JSON.parse(localStorage.getItem("recentlyViewed") || "[]");
+    });
 
     useEffect(() => {
         const fetchData = async () => {
@@ -48,6 +58,17 @@ const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        localStorage.setItem("recentlyViewed", JSON.stringify(recentlyViewed));
+    }, [recentlyViewed]);
+
+    const addToRecentlyViewed = (country: RecentCountry) => {
+        setRecentlyViewed((prev) => {
+            const updated = [country, ...prev.filter((c) => c.name !== country.name)].slice(0, 5);
+            return updated;
+        });
+    };
+
     return (
         <DataContext.Provider
             value={{
@@ -55,9 +76,11 @@ const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
                 filtredRegion,
                 typedCountryName,
                 sortBy,
+                recentlyViewed,
                 setFiltredRegion,
                 setTypedCountryName,
                 setSortBy,
+                addToRecentlyViewed,
             }}
         >
             {children}

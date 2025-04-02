@@ -1,18 +1,22 @@
+import { useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { useData } from "../../../data/DataContext";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import IconSVG from "../../controls/IconSVG/IconSVG";
 
 const CountryDetails = () => {
-  const { countries } = useData();
+  const { countries, addToRecentlyViewed } = useData();
   const { countryName } = useParams();
   const navigate = useNavigate();
 
   const country = countries.find(
-    (country) => country.name.common.toLowerCase() === countryName.toLowerCase()
+    (country) => country.name.common.toLowerCase() === countryName?.toLowerCase()
   );
 
-  console.log(country);
+  useEffect(() => {
+    if (country) {
+      addToRecentlyViewed({ name: country.name.common, flag: country.flags.png });
+    }
+  }, [country, addToRecentlyViewed]);
 
   if (!country) {
     return <div>Country not found</div>;
@@ -22,18 +26,14 @@ const CountryDetails = () => {
     <>
       <section className="backButton">
         <button className="button back-button" onClick={() => navigate("/")}>
-          <IconSVG name={"arrow-right"}></IconSVG>
+          <IconSVG name={"arrow-right"} />
           Back
         </button>
       </section>
       <section className="countries-details">
         <div className="country-details">
           <div className="flag">
-            <img
-              className="flag-img"
-              src={country.flags.png}
-              alt={country.flags.alt}
-            />
+            <img className="flag-img" src={country.flags.png} alt={country.flags.alt} />
           </div>
           <div className="country-data">
             <div className="name">
@@ -43,9 +43,7 @@ const CountryDetails = () => {
               <div className="country-data-first-col">
                 <div className="population">
                   <span className="population-label label">Population: </span>
-                  <span className="population-data data">
-                    {country.population}
-                  </span>
+                  <span className="population-data data">{country.population}</span>
                 </div>
                 <div className="region">
                   <span className="region-label label">Region: </span>
@@ -53,9 +51,7 @@ const CountryDetails = () => {
                 </div>
                 <div className="subregion">
                   <span className="subregion-label label">Subregion: </span>
-                  <span className="subregion-data data">
-                    {country.subregion}
-                  </span>
+                  <span className="subregion-data data">{country.subregion}</span>
                 </div>
                 <div className="capital">
                   <span className="capital-label label">Capital: </span>
