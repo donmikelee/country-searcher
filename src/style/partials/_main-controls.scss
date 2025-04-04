@@ -17,7 +17,7 @@
         box-shadow: variables.$control-boxShadow;
         border-radius: variables.$control-border-radius;
         align-self: flex-end;
-        padding-right: 50px;
+        padding-right: 40px;
 
         &:focus {
             background-position: 0px 18px;
@@ -32,10 +32,16 @@
         height: fit-content;
         font-weight: 600;
         position: absolute;
-        top: 54%;
+        top: 50%;
         right: 10px;
         text-transform: lowercase;
         cursor: pointer;
+        width: 24px;
+        height: 24px;
+
+        .icon-x {
+            width: 12px;
+        }
     }
 }
 
@@ -76,7 +82,7 @@
         }
     }
 
-    .region-list--expanded {
+    .dropdown-list--expanded {
         list-style-type: none;
         background-color: variables.$white;
         border-radius: variables.$control-border-radius;
@@ -87,7 +93,7 @@
         z-index: 99999;
         padding: 10px 0px;
 
-        .region-item {
+        .dropdown-item {
             padding: 5px 50px 5px 20px;
             cursor: pointer;
 
@@ -97,7 +103,7 @@
         }
     }
 
-    .region-list {
+    .dropdown-list {
         display: none;
     }
 }

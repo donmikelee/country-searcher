@@ -187,7 +187,7 @@ a {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 4px;
   align-self: flex-end;
-  padding-right: 50px;
+  padding-right: 40px;
 }
 .input-container .input-search:focus {
   background-position: 0px 18px;
@@ -200,10 +200,15 @@ a {
   height: fit-content;
   font-weight: 600;
   position: absolute;
-  top: 54%;
+  top: 50%;
   right: 10px;
   text-transform: lowercase;
   cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+.input-container .clear-button .icon-x {
+  width: 12px;
 }
 
 .countries-dropdown {
@@ -238,7 +243,7 @@ a {
   transform: rotate(180deg);
   transition: transform 0.1s ease-in;
 }
-.countries-dropdown .region-list--expanded {
+.countries-dropdown .dropdown-list--expanded {
   list-style-type: none;
   background-color: hsl(0, 0%, 100%);
   border-radius: 4px;
@@ -249,14 +254,14 @@ a {
   z-index: 99999;
   padding: 10px 0px;
 }
-.countries-dropdown .region-list--expanded .region-item {
+.countries-dropdown .dropdown-list--expanded .dropdown-item {
   padding: 5px 50px 5px 20px;
   cursor: pointer;
 }
-.countries-dropdown .region-list--expanded .region-item:hover {
+.countries-dropdown .dropdown-list--expanded .dropdown-item:hover {
   background-color: hsl(0, 0%, 98%);
 }
-.countries-dropdown .region-list {
+.countries-dropdown .dropdown-list {
   display: none;
 }
 
@@ -280,6 +285,10 @@ a {
   grid-template-columns: repeat(4, 1fr);
   gap: 48px;
   list-style-type: none;
+}
+
+.countries-list:has(p[class=no-results]) {
+  display: block;
 }
 
 .countries-list:has(.country-details) {
@@ -409,7 +418,7 @@ a {
   background-color: hsl(209, 23%, 22%);
   box-shadow: none;
 }
-.darkmode .countries-dropdown .region-list--expanded {
+.darkmode .countries-dropdown .dropdown-list--expanded {
   background-color: hsl(209, 23%, 22%);
   box-shadow: none;
 }
@@ -429,7 +438,7 @@ a {
 .darkmode .input-container .input-search::placeholder {
   color: hsl(0, 0%, 100%);
 }
-.darkmode .countries-dropdown .region-list--expanded .region-item:hover {
+.darkmode .countries-dropdown .dropdown-list--expanded .dropdown-item:hover {
   background-color: hsl(200, 15%, 8%);
 }
 

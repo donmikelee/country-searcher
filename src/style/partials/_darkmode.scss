@@ -27,7 +27,7 @@
         box-shadow: none;
     }
 
-    .countries-dropdown .region-list--expanded {
+    .countries-dropdown .dropdown-list--expanded {
         background-color: variables.$dark-blue;
         box-shadow: none;
     }
@@ -52,7 +52,7 @@
         }
     }
 
-    .countries-dropdown .region-list--expanded .region-item:hover {
+    .countries-dropdown .dropdown-list--expanded .dropdown-item:hover {
         background-color: variables.$very-dark-blue-two;
     }
 

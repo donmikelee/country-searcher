@@ -1,5 +1,5 @@
 import { useData } from "../../../data/DataContext";
-import { useState } from "react";
+import IconSVG from "../IconSVG/IconSVG";
 
 const InputSearch = () => {   
     const { typedCountryName, setTypedCountryName } = useData();
@@ -23,7 +23,7 @@ const InputSearch = () => {
                 value={typedCountryName || ""}
                 onChange={handleChangeCountryName} 
             />
-            {typedCountryName ? <button onClick={handleClearInput} className="clear-button">X</button> : null}
+            {typedCountryName ? <button onClick={handleClearInput} className="clear-button"><IconSVG name={"x"}/></button> : null}
         </div>  
     );
 };

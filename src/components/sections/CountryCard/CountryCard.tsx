@@ -55,7 +55,7 @@ const CountryCard = () => {
                     </div>
                 ))
             ) : (
-                <p className="no-results">Country with the given name not found.</p>
+                <p className="no-results">No countries match your search. Please check the spelling or try a different name.</p>
             )}
         </>
     );

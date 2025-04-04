@@ -7,6 +7,10 @@
     list-style-type: none;
 }
 
+.countries-list:has(p[class="no-results"]) {
+    display: block;
+}
+
 .countries-list:has(.country-details) {
     display: flex;
     flex-direction: column;
