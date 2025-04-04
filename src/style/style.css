@@ -42,6 +42,10 @@
   font-style: normal;
 }
 
+input[type=search]::-webkit-search-cancel-button {
+  display: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -58,7 +62,6 @@ a {
   background-color: hsl(0, 0%, 98%);
   display: flex;
   flex-direction: column;
-  row-gap: 60px;
   flex-grow: 1;
 }
 
@@ -92,16 +95,24 @@ a {
     padding: 30px 10px;
   }
 }
+.viewed-history {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .recently-viewed {
   display: flex;
-  align-items: center;
-  margin-left: 15px;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.recently-viewed span {
+  font-size: 12px;
+  font-weight: 600;
 }
 .recently-viewed .flags-container {
   display: flex;
-  justify-content: center;
   gap: 10px;
-  margin-left: 10px;
+  margin-top: 10px;
 }
 .recently-viewed .flag-link {
   display: inline-block;
@@ -161,6 +172,7 @@ a {
 }
 .input-container {
   display: flex;
+  position: relative;
 }
 .input-container .input-search {
   height: 42px;
@@ -174,11 +186,24 @@ a {
   border: none;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 4px;
+  align-self: flex-end;
+  padding-right: 50px;
 }
 .input-container .input-search:focus {
   background-position: 0px 18px;
   background-size: 1px;
   padding-left: 15px;
+}
+.input-container .clear-button {
+  background: none;
+  border: none;
+  height: fit-content;
+  font-weight: 600;
+  position: absolute;
+  top: 54%;
+  right: 10px;
+  text-transform: lowercase;
+  cursor: pointer;
 }
 
 .countries-dropdown {
@@ -201,6 +226,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 10px;
+  min-width: 200px;
 }
 .countries-dropdown .selected-option .icon-chevron-down {
   transform: rotate(0deg);
@@ -217,7 +244,7 @@ a {
   border-radius: 4px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   position: absolute;
-  top: 45px;
+  top: 72px;
   width: 100%;
   z-index: 99999;
   padding: 10px 0px;
@@ -236,6 +263,10 @@ a {
 .countries-filter {
   margin-left: auto;
   margin-right: 10px;
+}
+
+.countries-label {
+  margin-bottom: 5px;
 }
 
 @media (max-width: 650px) {

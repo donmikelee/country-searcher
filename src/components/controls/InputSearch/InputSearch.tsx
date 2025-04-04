@@ -1,4 +1,5 @@
 import { useData } from "../../../data/DataContext";
+import { useState } from "react";
 
 const InputSearch = () => {   
     const { typedCountryName, setTypedCountryName } = useData();
@@ -6,6 +7,10 @@ const InputSearch = () => {
     const handleChangeCountryName = (e: React.ChangeEvent<HTMLInputElement>) => {
         setTypedCountryName(e.target.value);
     };
+
+    const handleClearInput = () => {
+        setTypedCountryName("");
+    }
 
     return (
         <div className="input-container">
@@ -18,6 +23,7 @@ const InputSearch = () => {
                 value={typedCountryName || ""}
                 onChange={handleChangeCountryName} 
             />
+            {typedCountryName ? <button onClick={handleClearInput} className="clear-button">X</button> : null}
         </div>  
     );
 };

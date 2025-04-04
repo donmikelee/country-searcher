@@ -4,22 +4,31 @@ import { Link } from "react-router-dom";
 const CountryCard = () => {
     const { countries, filtredRegion, typedCountryName, sortBy } = useData();
 
-    const filteredCountries = countries
-        .filter(country => {
-            const regionFilter = !filtredRegion || country.region === filtredRegion;
-            const nameFilter = !typedCountryName || country.name.common.toLowerCase().startsWith(typedCountryName.toLowerCase());
-            return regionFilter && nameFilter;
-        })
-        .sort((a, b) => {
-            if (sortBy === "desc") return b.population - a.population;
-            if (sortBy === "asc") return a.population - b.population;
-            return 0;
-        });
+    const filteredCountries = countries.filter(country => {
+        const regionFilter = !filtredRegion || country.region === filtredRegion;
+        const nameFilter = !typedCountryName || country.name.common.toLowerCase().startsWith(typedCountryName.toLowerCase());
+        return regionFilter && nameFilter;
+    });
+
+    const sortedCountries = filteredCountries.sort((a, b) => {
+        switch (sortBy) {
+            case "population-asc":
+                return a.population - b.population;
+            case "population-desc":
+                return b.population - a.population;
+            case "name-asc":
+                return a.name.common.localeCompare(b.name.common);
+            case "name-desc":
+                return b.name.common.localeCompare(a.name.common);
+            default:
+                return 0;
+        }
+    });
 
     return (
         <>
-            {filteredCountries.length > 0 ? (
-                filteredCountries.map((country, index) => (
+            {sortedCountries.length > 0 ? (
+                sortedCountries.map((country, index) => (
                     <div key={index} className="country-card">
                         <Link to={`/${country.name.common.toLowerCase()}`} className="country-link">
                             <div className="flag">

@@ -8,7 +8,7 @@ const RecentlyViewed = () => {
 
     return (
         <div className="recently-viewed">
-            <h3>Recently Viewed Countries: </h3>
+            <span>Recently Viewed Countries</span>
             <div className="flags-container">
                 {recentlyViewed.map((country) => (
                     <Link key={country.name} to={`/${country.name.toLowerCase()}`} className="flag-link">

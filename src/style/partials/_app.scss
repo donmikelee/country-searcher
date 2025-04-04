@@ -8,6 +8,10 @@
     font-style: normal;
 }
 
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -24,7 +28,6 @@ a {
     background-color: variables.$very-light-gray;
     display: flex;
     flex-direction: column;
-    row-gap: 60px;
     flex-grow: 1;
 }
 

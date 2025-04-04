@@ -6,7 +6,6 @@ import AppRoutes from "../../../routes/AppRoutes";
 import SortDropdown from "../../controls/SortDropdown/SortDropdown";
 import RecentlyViewed from "../RecentlyViewed/RecentlyViewed";
 
-
 const HomePage = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
@@ -16,15 +15,19 @@ const HomePage = () => {
       <Nav />
       <main className="main-panel">
         {isHomePage && (
-          <section className="main-controls">
-            <InputSearch />
-            <RecentlyViewed />
-            <RegionDropdown />
-            <SortDropdown />
-          </section>
+          <>
+            <section className="main-controls">
+              <InputSearch />
+              <RegionDropdown />
+              <SortDropdown />
+            </section>
+            <section className="viewed-history">
+              <RecentlyViewed />
+            </section>
+          </>
         )}
         <section className="countries-list">
-          <AppRoutes/>
+          <AppRoutes />
         </section>
       </main>
     </>

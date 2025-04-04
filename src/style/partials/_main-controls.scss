@@ -2,6 +2,7 @@
 
 .input-container {
     display: flex;
+    position: relative;
 
     .input-search {
         height: variables.$control-height;
@@ -15,12 +16,26 @@
         border: none;
         box-shadow: variables.$control-boxShadow;
         border-radius: variables.$control-border-radius;
+        align-self: flex-end;
+        padding-right: 50px;
 
         &:focus {
             background-position: 0px 18px;
             background-size: 1px;
             padding-left: 15px;
         }
+    }
+
+    .clear-button {
+        background: none;
+        border: none;
+        height: fit-content;
+        font-weight: 600;
+        position: absolute;
+        top: 54%;
+        right: 10px;
+        text-transform: lowercase;
+        cursor: pointer;
     }
 }
 
@@ -44,6 +59,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-top: 10px;
+        min-width: 200px;
 
         .icon-chevron-down {
             transform: rotate(0deg);
@@ -65,7 +82,7 @@
         border-radius: variables.$control-border-radius;
         box-shadow: variables.$control-boxShadow;
         position: absolute;
-        top: 45px;
+        top: 72px;
         width: 100%;
         z-index: 99999;
         padding: 10px 0px;
@@ -88,6 +105,10 @@
 .countries-filter {
     margin-left: auto;
     margin-right: 10px;
+}
+
+.countries-label {
+    margin-bottom: 5px;
 }
 
 @media (max-width: 650px){
