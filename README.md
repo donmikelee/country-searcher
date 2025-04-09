@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+# 🌍 Countries Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully interactive **React + TypeScript** frontend project that displays data about countries fetched from a REST API. Users can filter countries by region, search by name, and view detailed information. The app supports both **light** and **dark mode**, with preferences saved to **localStorage**.
 
-Currently, two official plugins are available:
+## 🔧 Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 18**
+- **TypeScript**
+- **CSS Modules / SCSS**
+- **REST Countries API**
+- **Local Storage** (for theme persistence)
+- **Accessible Dropdowns** (with outside click detection)
 
-## Expanding the ESLint configuration
+## ⚙️ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- 🌐 Browse countries from a public API
+- 🔍 Search countries by name
+- 🌍 Filter by region/continent
+- 📝 View detailed information about each country
+- 🌗 Light & Dark Mode with persistence
+- ♿ Keyboard and screen reader accessible components (ARIA ready)
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 📁 Project Structure
+
+```
+/src
+  /components     → Reusable UI components (dropdowns, header, etc.)
+  /data           → Static data files or TypeScript types/interfaces
+  /style          → Global styles, variables, and theming (SCSS/CSS Modules)
+  /routes         → Page components and routing logic (React Router views)
+```
+
+## 🧠 Author
+
+**Michał Górny / donmikelee**  
+
+
+⭐ Enjoyed the project? Leave a star and feel free to fork or contribute!
