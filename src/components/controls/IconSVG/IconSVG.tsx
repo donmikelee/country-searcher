@@ -1,4 +1,4 @@
-import Icons from "../../../style/partials/icons.svg";
+import Icons from "../../../style/partials/icons.svg?url";
 
 interface IconSVGProps {
   name: string;

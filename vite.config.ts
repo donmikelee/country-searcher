@@ -7,4 +7,9 @@ export default defineConfig({
     react(),
     svgr(),
   ],
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
 });

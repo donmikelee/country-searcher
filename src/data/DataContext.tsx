@@ -1,16 +1,9 @@
 import React, { createContext, useContext, ReactNode, useEffect, useState } from "react";
 import axios from "axios";
+import { Country } from "@/types/Country";
 
 interface DataProviderProps {
     children: ReactNode;
-}
-
-interface Country {
-    name: { common: string };
-    region: string;
-    population: number;
-    flags: { png: string; alt: string };
-    capital: string[];
 }
 
 interface RecentCountry {

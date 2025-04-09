@@ -2,13 +2,14 @@ import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useData } from "../../../data/DataContext";
 import IconSVG from "../../controls/IconSVG/IconSVG";
+import { Country } from "@/types/Country";
 
 const CountryDetails = () => {
   const { countries, addToRecentlyViewed } = useData();
-  const { countryName } = useParams();
+  const { countryName } = useParams<{ countryName: string }>();
   const navigate = useNavigate();
 
-  const country = countries.find(
+  const country: Country | undefined = countries.find(
     (country) => country.name.common.toLowerCase() === countryName?.toLowerCase()
   );
 
