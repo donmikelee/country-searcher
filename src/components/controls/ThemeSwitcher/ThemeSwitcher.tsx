@@ -22,10 +22,17 @@ const ThemeSwitcher = () => {
 
   return (
     <div className="theme-switcher">
-      <button className="theme-changer" onClick={handleDarkmodeChange}>
-        <IconSVG name={"moon"} />
-        <span className="theme-changer-text">Dark</span>
-      </button>
+      {!darkmode ? (
+        <button className="theme-changer" onClick={handleDarkmodeChange}>
+          <IconSVG name={"moon"} />
+          <span className="theme-changer-text">Dark Mode</span>
+        </button>
+      ) : (
+        <button className="theme-changer" onClick={handleDarkmodeChange}>
+          <IconSVG name={"sun"} />
+          <span className="theme-changer-text">Light</span>
+        </button>
+      )}
     </div>
   );
 };
